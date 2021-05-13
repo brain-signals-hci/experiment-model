@@ -1,0 +1,8 @@
+aspect_model,model_description,example
+Recruitment strategy,"How where study participants recruited, e.g.\ through social media, in class, etc.?","A snowball procedure was used to gather the sample of study participants. The study was advertised via university courses, email and social media."
+Incentives,"What compensation (if any) was offered to study participants, e.g.\ money, class credit, etc.? What were the criteria for being eligible for the compensation?",Participants received monetary compensation for their participation (10 Euro).}
+Age,How old are the participants (mean and standard deviation)?,mean age $24.53$ (SD: $3.00$)
+Gender,With what gender do participants identify (relative frequencies)?,2 females and 9 males
+Occupation,What is the profession or - in case of students - the field of study of the participants?,Data were collected from 34 computer science undergraduates at the first two authors’ institution
+Inclusion or exclusion criteria,"Where there rules on which participants were eligible to take part in the experiment and what were these criteria (e.g.\ handedness, disabilities, caffeine consumption, etc.",Each of the individuals was enrolled in at least one computer science course
+Approval of ethics committee,"Was the study approved by an ethics committee? If so, by which one?",the experimental protocol was approved by the University Research Ethics Committee prior to data collection.

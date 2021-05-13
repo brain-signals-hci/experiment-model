@@ -1,37 +1,152 @@
-## Welcome to GitHub Pages
+## Model Overview
 
-You can use the [editor on GitHub](https://github.com/brain-signals-hci/experiment-model/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+{% assign aspects = "Technical Aspects of Recording, Task Description, Participants, Experiment Flow, Data Processing" | split: ", "  %}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The model we discuss here was created in an iterative process during initial passes of the surveyed literature: A superset of reported attributes was created, similar concepts (or identical concepts with different names) were grouped together and categories were defined in accordance to the typical section structure of the papers. This process resulted in the following *categories*:
+[Technical aspects of recording](#technical-aspects-of-recording),
+[Task description](#task-description),
+[Participants](#participants),
+[Experiment flow](#experiment-flow),
+[Data processing](#data-processing), and
+[Brain signal integration](#brain-signal-integration).
 
-### Markdown
+In the tables below, we present the experiment model for HCI research with brain signals. We describe each category and list the attributes contained within them. For each attribute, we give a definition of the attribute and present an example taken from the surveyed literature. We tried to identify examples which are biased towards a more detailed documentation, but individual examples may still lack certain information.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+We invite the community to [contribute](#contribute) to future versions of the experiment model.
 
-```markdown
-Syntax highlighted code block
+### Technical Aspects of Recording
 
-# Header 1
-## Header 2
-### Header 3
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  {% for row in site.data.model_technical %}
+    {% if forloop.first %}
+    <tr class="header">
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+### Task Description
 
-**Bold** and _Italic_ and `Code` text
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  {% for row in site.data.model_task %}
+    {% if forloop.first %}
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Participants
 
-### Jekyll Themes
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  {% for row in site.data.model_participants %}
+    {% if forloop.first %}
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/brain-signals-hci/experiment-model/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Experiment Flow
 
-### Support or Contact
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  {% for row in site.data.model_experiment %}
+    {% if forloop.first %}
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Data Processing
+
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  {% for row in site.data.model_data %}
+    {% if forloop.first %}
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
+
+### Brain Signal Integration
+
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  {% for row in site.data.model_brain_signals %}
+    {% if forloop.first %}
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
+
+## Contribute
+D
