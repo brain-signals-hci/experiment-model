@@ -1,0 +1,5 @@
+title: Experiment Model for Brain Signals in HCI
+
+theme: jekyll-theme-slate
+
+plugins: ['jekyll/scholar']
