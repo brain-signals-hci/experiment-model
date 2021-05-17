@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/experiment-model/assets/css/style.css?v=ac302ee03ab096f400fc3e389760bbb2740d07fc">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Model Overview | Experiment Model for Brain Signals in HCI</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Model Overview" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://brain-signals-hci.github.io//experiment-model/" />
+<meta property="og:url" content="https://brain-signals-hci.github.io//experiment-model/" />
+<meta property="og:site_name" content="Experiment Model for Brain Signals in HCI" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Model Overview" />
+<script type="application/ld+json">
+{"url":"https://brain-signals-hci.github.io//experiment-model/","@type":"WebSite","headline":"Model Overview","name":"Experiment Model for Brain Signals in HCI","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/brain-signals-hci/experiment-model">View on GitHub</a>
+
+          <h1 id="project_title">Experiment Model for Brain Signals in HCI</h1>
+          <h2 id="project_tagline"></h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2 id="model-overview">Model Overview</h2>
+
+<p>The model we discuss here was created in an iterative process during initial passes of the surveyed literature: A superset of reported attributes was created, similar concepts (or identical concepts with different names) were grouped together and categories were defined in accordance to the typical section structure of the papers. This process resulted in the following <em>categories</em>:
+<a href="#technical-aspects-of-recording">Technical aspects of recording</a>,
+<a href="#task-description">Task description</a>,
+<a href="#participants">Participants</a>,
+<a href="#experiment-flow">Experiment flow</a>,
+<a href="#data-processing">Data processing</a>, and
+<a href="#brain-signal-integration">Brain signal integration</a>.</p>
+
+<p>In the tables below, we present the experiment model for HCI research with brain signals. We describe each category and list the attributes contained within them. For each attribute, we give a definition of the attribute and present an example taken from the surveyed literature. We tried to identify examples which are biased towards a more detailed documentation, but individual examples may still lack certain information.</p>
+
+<p>We invite the community to <a href="#contribute">contribute</a> to future versions of the experiment model.</p>
+
+<h3 id="technical-aspects-of-recording">Technical Aspects of Recording</h3>
+
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  
+    
+    <tr class="header">
+      
+        <th>Attribute</th>
+      
+        <th>Description</th>
+      
+        <th>Example</th>
+      
+    </tr>
+    
+    <tr class="row">
+        <td>Type of Sensor</td>
+        <td>For a given brain sensing modality, report the manufacturer and the specification of the sensor chain employed.</td>
+        <td>“The EEG was recorded using a NeuroScan system with 32 Ag-AgCl electrodes” <a class="citation" href="#lee2014">(Lee et al., 2014)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Sensor Position</td>
+        <td>Report where on the scalp electrodes are positioned. For EEG, this is most often done in terms of the 10-20 positioning system or its refinements. For fNIRS, the placement of transmitters and receivers has to be distinguished and the respective distances need to be reported.</td>
+        <td>“Electrodes were positioned according to the extended 10-20 system on CPz, POz, Oz, Iz, O1 and O2” (missing reference)</td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Sampling Rate</td>
+        <td>Report the number of samples recorded per second in Hz.</td>
+        <td>“A sampling rate of EEG signals was set as 300 Hz.” <a class="citation" href="#Terasawa:2017:TLS:3136755.3136772">(Terasawa et al., 2017)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Measurement Quality</td>
+        <td>For EEG, the threshold for the maximum impedance level (in kΩ) is often reported. For fNIRS, no standardized quality measurement exists, different devices provide different ways of measurement (e.g. photon count).</td>
+        <td>“electrode impedance was below 5 KΩ” <a class="citation" href="#vi2014">(Vi et al., 2014)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Reference</td>
+        <td>Specific to the EEG signal, it is custom to report the electrode to which the recording was referenced.</td>
+        <td>“Two electrodes were located at both earlobes as reference and ground.” <a class="citation" href="#Terasawa:2017:TLS:3136755.3136772">(Terasawa et al., 2017)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Auxiliary signals</td>
+        <td>The brain sensing modality may not be the only signal, which is captured during the experiment. Often, other sensors, such as eye trackers or heart rate monitors are employed. For these, similar information as for the brain sensing modality may be reported, especially about the specific type of sensor and its placement.</td>
+        <td>“Eye positions were measured with an embedded infrared eye-tracking module: aGlass DKI from 7invensun (https://www.7invensun.com)” <a class="citation" href="#Ma:2018:CBI:3172944.3172988">(Ma et al., 2018)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Synchronization with stimuli and other signals</td>
+        <td>For analyzing a continous stream of brain signal data, it needs to be synchronized to the events of the experiments (and potentially any other signal sources). This can be done through timestamps, trigger signals, light sensors or other means and the method may be reported to determine the precision of the achieved synchronization.</td>
+        <td>“A parallel port connection between recording PC and experimental PC synchronized the EEG recording with the experimental events, such as the sound onset and button press.” <a class="citation" href="#Glatz:2018:URS:3173574.3174046">(Glatz et al., 2018)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Recording Environment</td>
+        <td>This point reports where and under what conditions the experiment was conducted. Of relevance can be the conditions regarding control of light, sound, electromagnetic fields as well as the positioning of the participant. This attribute is often illustrated through a photo or video of the environment.</td>
+        <td>“#Scanners was presented in an intimate 6 person capacity cinema, within a caravan […]. The space had no windows, low lighting, plush seating, an eight foot projected image, and stereo speakers. Figure 3 [shows a] participant wearing the EEG device, experiencing #Scanners inside the caravan.” <a class="citation" href="#Pike:2016:SEC:2858036.2858276">(Pike et al., 2016)</a></td>
+    </tr>
+  
+</table>
+
+<h3 id="task-description">Task Description</h3>
+
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  
+    
+    <tr>
+      
+        <th>Attribute</th>
+      
+        <th>Description</th>
+      
+        <th>Example</th>
+      
+    </tr>
+    
+    <tr class="row">
+        <td>Participant Restraints</td>
+        <td>This attribute relates to any instructions or physical restraints, which were in place during the experiment to avoid artifacts or other undesired effects influencing the signal.</td>
+        <td>“the participants were instructed to refrain from excessive movement by keeping arms at rest on the table in a position that allowed them to reach the keyboard without excessive movement.” <a class="citation" href="#Crk:2015:UPE:2872314.2829945">(Crk et al., 2015)</a> </td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Output devices</td>
+        <td>Describes through which devices (e.g., computer screen, mobile phone, etc.) information and material is communicated to the user. As many brain activity patterns are sensitive to the specific characteristics of the stimulation, details of the presentation may be reported.</td>
+        <td>“The […] game stimulus was run on a powerful high-end gaming PC (CPU: Intel® Core ™ i7-6850K @ 3.60 GHz; RAM: 32 GB; GPU: NVIDIA Geforce GTX 1080) and displayed on a 27-inch BenQ ZOWIE XL2720 144 hz gaming monitor at a 1920x1080 resolution.” <a class="citation" href="#TERKILDSEN201964">(Terkildsen &amp; Makransky, 2019)</a> </td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Input devices</td>
+        <td>Describes through which devices (besides the brain signal itself) the user communicates commands and other types of input to the system.</td>
+        <td>“HMD-mounted Leap Motion (https://www. leapmotion.com) to track participants’ hands.” <a class="citation" href="#skola2019">(Škola &amp; Liarokapis, 2019)</a> </td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>User Input</td>
+        <td>Describes which kind of commands and input users can enter into the system at which point of the task. May specify which input devices are used and whether there are any requirements or restrictions to the input.</td>
+        <td>“They had to respond to auditory notifications whenever one was presented, with a button press using either their left or right index fingers. Six notifications (i.e., 3 complementary pairs of verbal commands and auditory icons) were pre-assigned to a left index-finger press and the remaining six, to a right index-finger press.” <a class="citation" href="#Glatz:2018:URS:3173574.3174046">(Glatz et al., 2018)</a> </td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Middleware/  Communication</td>
+        <td>For interactive applications or distributed recording setups, this attribute reports how the different parts communicate to exchange data, triggers, commands, etc. </td>
+        <td>“We wrote a custom Java bridge program to connect the headset to the Android OS and Unity application on the Game tablet. The Java program polled the headset 60 times a second for EEG power spectrum […] We connected the Calibrate tablet to the Game tablet using WiFi Direct […].” <a class="citation" href="#Antle:2018:OUD:3175498.3131607">(Antle et al., 2018)</a> </td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Framework/  Technical platform</td>
+        <td>What software or development toolkit (in what version) was used as the foundation to implement the task (e.g., PsychoPy, Unity, etc.)</td>
+        <td>“The scene was developed using Unity version 2017.3.0f3, for the representation of hands, the realistically looking hand models ``Pepper Hands’’ from Leap Motion suite were used (visible in Figure 3).” <a class="citation" href="#skola2019">(Škola &amp; Liarokapis, 2019)</a> </td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Task Functionality</td>
+        <td>Reports what functionality the involved software provides to the user (in the case of a working interactive application) and how it responds to different user input. For experiments which are based on or inspired by established paradigms (e.g., from cognitive psychology), this source may be reported (e.g., in reference to a source such as the Cognitive Atlas.</td>
+        <td>“the main task for the study is a multi-robot version of the task introduced in [27]. Participants remotely supervised two robots (the blue robot and the red robot) that were exploring different areas of a virtual environment. Participants were told that the two robots had collected information that needed to be transmitted back to the control center. [continues…]” <a class="citation" href="#Solovey:2012:BEI:2207676.2208372">(Solovey et al., 2012)</a> </td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Architecture</td>
+        <td>For experiments which involve non-trivial custom software artifacts, this attribute reports the underlying software architecture, informing about structure of and information flow between modules.</td>
+        <td></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Stimulus Material</td>
+        <td>For tasks which involve the repeated presentation of uniform stimuli (e.g., pictures to rate, text prompts to enter, etc.), this attribute reports the form of these stimuli (e.g., picture size, length, language, etc.) and their source.</td>
+        <td>“To prepare experimental materials, a dataset of notifications from the websites Notification Sounds and Appraw were collected. Seven musically trained raters were recruited to determine the melody complexity of the 40 notifications. […] (The stimuli can be downloaded at https://goo.gl/SnZrzG).” <a class="citation" href="#Cherng:2019:MIM:3290605.3300639">(Cherng et al., 2019)</a> </td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Visualization provided?</td>
+        <td>This attribute reports visually (through screen shots or video) the task as shown to the user. If the task has multiple distinct parts, all of them may be visualized. If the task is not in English, the visualization may be accompanied by a translation.</td>
+        <td></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Timing</td>
+        <td>Reports on if and how the task is (partially) paced by an internal clock, for example for controlling the duration for stimulus presentation or the time time for responding to a prompt.</td>
+        <td>“Each trial began with a black screen for 3s, followed by a fixation dot in the center of the screen for 200ms. After that, the screen remains clear for 200ms before one of four stimuli was displayed for 300ms.” <a class="citation" href="#Vi:2014:ERN:2611222.2557015">(Vi et al., 2014)</a> </td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Code for task provided?</td>
+        <td>Reports on whether the task is provided in source code or an executable file and under what licence. If custom hardware is involved, this could also include a blueprint or a circuit diagram.</td>
+        <td></td>
+    </tr>
+  
+</table>
+
+<h3 id="participants">Participants</h3>
+
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  
+    
+    <tr>
+      
+        <th>Attribute</th>
+      
+        <th>Description</th>
+      
+        <th>Example</th>
+      
+    </tr>
+    
+    <tr class="row">
+        <td>Recruitment strategy</td>
+        <td>How where study participants recruited, e.g. through social media, in class, etc.?</td>
+        <td>“A snowball procedure was used to gather the sample of study participants. The study was advertised via university courses, email and social media.” <a class="citation" href="#Johnson:2015:CGP:2702123.2702468">(Johnson et al., 2015)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Incentives</td>
+        <td>What compensation (if any) was offered to study participants, e.g. money, class credit, etc.? What were the criteria for being eligible for the compensation?</td>
+        <td>“Participants received monetary compensation for their participation (10 Euro).” <a class="citation" href="#Putze:2017:ACA:3136755.3136784">(Putze et al., 2017)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Age</td>
+        <td>How old are the participants (mean and standard deviation)?</td>
+        <td>“mean age 24.53 (SD: 3.00)” <a class="citation" href="#Frey:2016:FEE:2858036.2858525">(Frey et al., 2016)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Gender</td>
+        <td>With what gender do participants identify (relative frequencies)?</td>
+        <td>“2 females and 9 males” <a class="citation" href="#Ma:2018:CBI:3172944.3172988">(Ma et al., 2018)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Occupation</td>
+        <td>What is the profession or - in case of students - the field of study of the participants?</td>
+        <td>“Data were collected from 34 computer science undergraduates at the first two authors’ institution” <a class="citation" href="#Crk:2015:UPE:2872314.2829945">(Crk et al., 2015)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Inclusion or exclusion criteria</td>
+        <td>Where there rules on which participants were eligible to take part in the experiment and what were these criteria (e.g. handedness, disabilities, caffeine consumption, etc.</td>
+        <td>“Each of the individuals was enrolled in at least one computer science course” <a class="citation" href="#Crk:2015:UPE:2872314.2829945">(Crk et al., 2015)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Approval of ethics committee</td>
+        <td>Was the study approved by an ethics committee? If so, by which one?</td>
+        <td>“the experimental protocol was approved by the University Research Ethics Committee prior to data collection.” <a class="citation" href="#burns2015use">(Burns &amp; Fairclough, 2015)</a></td>
+    </tr>
+  
+</table>
+
+<h3 id="experiment-flow">Experiment Flow</h3>
+
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  
+</table>
+
+<h3 id="data-processing">Data Processing</h3>
+
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  
+    
+    <tr>
+      
+        <th>Attribute</th>
+      
+        <th>Description</th>
+      
+        <th>Example</th>
+      
+    </tr>
+    
+    <tr class="row">
+        <td>Derivation of labels</td>
+        <td>Outside neurofeedback applications the recorded brain signal data is distributed between multiple groups or assigned a continuous value. This attribute may report how the label is derived from the collected data (e.g., defined by the experiment structure, by questionnaire responses, or external ratings).</td>
+        <td>“We considered the mean of the three NASA-TLX parameters (effort, mental demand and frustration) to evaluate the overall mental workload. The average score was thresholded at the mean value of 2 (since the used scale was 0–4) to quantize or characterize a parameter block as inducing low/high workload.” <a class="citation" href="#Bilalpur:2018:EEC:3242969.3243016">(Bilalpur et al., 2018)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Data transformation</td>
+        <td>This attribute refers to all processing steps which transform raw data while keeping it in the original time-domain representation. Examples of such transformation steps are: re-referencing, baseline normalization, downsampling, etc.</td>
+        <td>“the common average was subtracted from all EEG channels.” <a class="citation" href="#Lampe:2014:BIH:2557500.2557533">(Lampe et al., 2014)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Filtering</td>
+        <td>This attribute reports any filtering of the data. This may include the type of filter applied as well as necessary parameters, such as the filter order.</td>
+        <td>“EEG data was first low-pass filtered with a cutoff frequency of 50hz and high-pass filtered with a cutoff frequency of 0.16hz, both using a third-order butterworth filter” <a class="citation" href="#Rodrigue:2015:SDD:2678025.2701382">(Rodrigue et al., 2015)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Windowing</td>
+        <td>This attribute reports how segments of data are aligned (e.g., locked to an event in the experiment), how long they are and with which window function they are extracted.</td>
+        <td>“The data was then segmented into 1.5-second epochs, overlapping each previous epoch by 50%” <a class="citation" href="#Rodrigue:2015:SDD:2678025.2701382">(Rodrigue et al., 2015)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Artifact cleaning</td>
+        <td>Reports through which algorithms (beyond filtering) artifacts were removed and which artifacts are targeted.</td>
+        <td>“Independent Component Analysis (ICA) is applied […] The components are first filtered using a band-pass filter with cut off frequencies 1 - 6 Hz. Choosing the component with the highest energy [and] applying a high-pass filter with a cut off frequency of 20 Hz.” <a class="citation" href="#Jarvis:2011:MPI:2070481.2070516">(Jarvis et al., 2011)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Hyperparameter optimization</td>
+        <td>For machine learning models, this attribute reports how the hyperparameters of the model were chosen (e.g. through grid search) and which hyperparameters where chosen in the final model. This also includes other parameters of the processing pipeline which are optimized (e.g. in preprocessing).</td>
+        <td>“A grid search was performed to optimize sigma for all participants, the remaining parameters were left as default.” <a class="citation" href="#Rodrigue:2015:SDD:2678025.2701382">(Rodrigue et al., 2015)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Outlier handling</td>
+        <td>Reports any methods for excluding certain samples, windows, or sessions based on the contained data or other external factors.</td>
+        <td>“Any rest or trial period with 20 percent or higher error rate is considered noisy and can be excluded from the analysis” <a class="citation" href="#Crk:2015:UPE:2872314.2829945">(Crk et al., 2015)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Feature extraction</td>
+        <td>This attribute reports on how a feature vector for classification or regression is calculated from the preprocessed data.</td>
+        <td>“[W]e partitioned each data window into smaller segments of 50 ms length. We then used the signal mean of the segment, calculated on the band-pass filtered signal, with cutoff frequencies at 4 and 13 Hz (i.e. θ- and α-bands).” <a class="citation" href="#Putze:2017:ACA:3136755.3136784">(Putze et al., 2017)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Feature selection</td>
+        <td>This attribute reports on procedures to reduce the number of features automatically.</td>
+        <td>“we performed a feature selection using the Fisher ratio as selection criterion. The number k of selected features […] was a tuning parameter in the range between 5 and 50.” <a class="citation" href="#Putze:2017:ACA:3136755.3136784">(Putze et al., 2017)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Learning model</td>
+        <td>This attribute reports on the specific machine learning model that is employed (if any) to perform classification or regression.</td>
+        <td>“the Neural Network Toolbox of MATLAB was used to create an artificial neural network (ANN) with 198 inputs, 20 hidden neurons and 4 outputs. The patternnetfunction, which creates a feed-forward neural network, was used. […]” <a class="citation" href="#Lampe:2014:BIH:2557500.2557533">(Lampe et al., 2014)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Evaluation procedure</td>
+        <td>For machine learning models, this attribute reports how they were evaluated to assess their performance. This involves the exact metric used for assessment as well as the approach to (sometimes repeatedly) determine test and training data sets.</td>
+        <td>“To assess the classifiers’ performance on the calibration data, we used 4-fold cross-validation (CV). […] The performance was measured using the area under the receiver-operating characteristic curve (AUROCC).” <a class="citation" href="#Frey:2016:FEE:2858036.2858525">(Frey et al., 2016)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Processing code provided?</td>
+        <td>Reports if the code for processing the brain signal data is released with the paper or in a separate repository. If the code cannot be provided, as a substitute it is possible to report the employed frameworks (e.g. EEGLAB).</td>
+        <td>“The full classification pipeline is implemented in Python. For EEG processing, we use the MNE toolbox [17]. For machine learning and evaluation algorithms, we use scikit [28] and custom routines build on numpy and scipy.” <a class="citation" href="#Putze:2017:ACA:3136755.3136784">(Putze et al., 2017)</a></td>
+    </tr>
+  
+</table>
+
+<h3 id="brain-signal-integration">Brain Signal Integration</h3>
+
+<table>
+    <colgroup>
+        <col width="30%" />
+        <col width="40%" />
+        <col width="30%" />
+    </colgroup>
+  
+    
+    <tr>
+      
+        <th>Attribute</th>
+      
+        <th>Description</th>
+      
+        <th>Example</th>
+      
+    </tr>
+    
+    <tr class="row">
+        <td>Brain Input effect</td>
+        <td>This attribute describes how the output of the brain input processing influences the design, the behavior, or the content of the application or experimental paradigm.</td>
+        <td>“when the system was confident that the user was in a state of low or high workload, one UAV would be added or removed, respectively. After a UAV was added or removed, there was a 20 second period where no more vehicles were added or removed.” <a class="citation" href="#Afergan:2014:DDU:2611222.2557230">(Afergan et al., 2014)</a></td>
+    </tr>
+  
+    
+    <tr class="row">
+        <td>Type of integration</td>
+        <td>This attribute describes the algorithmic implementation of the brain signal integration, i.e., whether an explicit conditional statement, an Influence Diagram, a state graph, or a different way of behavior modeling was used.</td>
+        <td>“[The self-correction algorithm] inspects the probability distribution […] and picks the now highest scoring class […]. [W]e only used the second best class if its re-normalized confidence […] is above a certain threshold T […]. Otherwise, the user was asked to repeat the input.” <a class="citation" href="#Putze:2015:DES:2702123.2702184">(Putze et al., 2015)</a></td>
+    </tr>
+  
+</table>
+
+<h3 id="references">References</h3>
+
+<ol class="bibliography"><li><span id="lee2014">Lee, Y.-C., Lin, W.-C., King, J.-T., Ko, L.-W., Huang, Y.-T., &amp; Cherng, F.-Y. (2014). An EEG-Based Approach for Evaluating Audio Notifications Under Ambient Sounds. <i>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems</i>, 3817–3826. https://doi.org/10.1145/2556288.2557076</span></li>
+<li><span id="Terasawa:2017:TLS:3136755.3136772">Terasawa, N., Tanaka, H., Sakti, S., &amp; Nakamura, S. (2017). Tracking Liking State in Brain Activity While Watching Multiple Movies. <i>Proceedings of the 19th ACM International Conference on Multimodal Interaction</i>, 321–325. https://doi.org/10.1145/3136755.3136772</span></li>
+<li><span id="vi2014">Vi, C. T., Jamil, I., Coyle, D., &amp; Subramanian, S. (2014). Error Related Negativity in Observing Interactive Tasks. <i>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems</i>, 3787–3796. https://doi.org/10.1145/2556288.2557015</span></li>
+<li><span id="Ma:2018:CBI:3172944.3172988">Ma, X., Yao, Z., Wang, Y., Pei, W., &amp; Chen, H. (2018). Combining Brain-Computer Interface and Eye Tracking for High-Speed Text Entry in Virtual Reality. <i>23rd International Conference on Intelligent User Interfaces</i>, 263–267. https://doi.org/10.1145/3172944.3172988</span></li>
+<li><span id="Glatz:2018:URS:3173574.3174046">Glatz, C., Krupenia, S. S., Bülthoff, H. H., &amp; Chuang, L. L. (2018). Use the Right Sound for the Right Job: Verbal Commands and Auditory Icons for a Task-Management System Favor Different Information Processes in the Brain. <i>Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems</i>, 472:1–472:13. https://doi.org/10.1145/3173574.3174046</span></li>
+<li><span id="Pike:2016:SEC:2858036.2858276">Pike, M., Ramchurn, R., Benford, S., &amp; Wilson, M. L. (2016). #Scanners: Exploring the Control of Adaptive Films Using Brain-Computer Interaction. <i>Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems</i>, 5385–5396. https://doi.org/10.1145/2858036.2858276</span></li>
+<li><span id="Crk:2015:UPE:2872314.2829945">Crk, I., Kluthe, T., &amp; Stefik, A. (2015). Understanding Programming Expertise: An Empirical Study of Phasic Brain Wave Changes. <i>ACM Trans. Comput.-Hum. Interact.</i>, <i>23</i>(1), 2:1–2:29. https://doi.org/10.1145/2829945</span></li>
+<li><span id="TERKILDSEN201964">Terkildsen, T., &amp; Makransky, G. (2019). Measuring presence in video games: An investigation of the potential use of physiological measures as indicators of presence. <i>International Journal of Human-Computer Studies</i>, <i>126</i>, 64–80. https://doi.org/https://doi.org/10.1016/j.ijhcs.2019.02.006</span></li>
+<li><span id="skola2019">Škola, F., &amp; Liarokapis, F. (2019). Examining and Enhancing the Illusory Touch Perception in Virtual Reality Using Non-Invasive Brain Stimulation. <i>Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems</i>, 247:1–247:12. https://doi.org/10.1145/3290605.3300477</span></li>
+<li><span id="Antle:2018:OUD:3175498.3131607">Antle, A. N., Chesick, L., &amp; Mclaren, E.-S. (2018). Opening Up the Design Space of Neurofeedback Brain–Computer Interfaces for Children. <i>ACM Trans. Comput.-Hum. Interact.</i>, <i>24</i>(6), 38:1–38:33. https://doi.org/10.1145/3131607</span></li>
+<li><span id="Solovey:2012:BEI:2207676.2208372">Solovey, E., Schermerhorn, P., Scheutz, M., Sassaroli, A., Fantini, S., &amp; Jacob, R. (2012). Brainput: Enhancing Interactive Systems with Streaming Fnirs Brain Input. <i>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems</i>, 2193–2202. https://doi.org/10.1145/2207676.2208372</span></li>
+<li><span id="Cherng:2019:MIM:3290605.3300639">Cherng, F.-Y., Lee, Y.-C., King, J.-T., &amp; Lin, W.-C. (2019). Measuring the Influences of Musical Parameters on Cognitive and Behavioral Responses to Audio Notifications Using EEG and Large-scale Online Studies. <i>Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems</i>, 409:1–409:12. https://doi.org/10.1145/3290605.3300639</span></li>
+<li><span id="Vi:2014:ERN:2611222.2557015">Vi, C. T., Jamil, I., Coyle, D., &amp; Subramanian, S. (2014). Error Related Negativity in Observing Interactive Tasks. <i>Proceedings of the 32Nd Annual ACM Conference on Human Factors in Computing Systems</i>, 3787–3796. https://doi.org/10.1145/2556288.2557015</span></li>
+<li><span id="Johnson:2015:CGP:2702123.2702468">Johnson, D., Wyeth, P., Clark, M., &amp; Watling, C. (2015). Cooperative Game Play with Avatars and Agents: Differences in Brain Activity and the Experience of Play. <i>Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems</i>, 3721–3730. https://doi.org/10.1145/2702123.2702468</span></li>
+<li><span id="Putze:2017:ACA:3136755.3136784">Putze, F., Schünemann, M., Schultz, T., &amp; Stuerzlinger, W. (2017). Automatic Classification of Auto-correction Errors in Predictive Text Entry Based on EEG and Context Information. <i>Proceedings of the 19th ACM International Conference on Multimodal Interaction</i>, 137–145. https://doi.org/10.1145/3136755.3136784</span></li>
+<li><span id="Frey:2016:FEE:2858036.2858525">Frey, J., Daniel, M., Castet, J., Hachet, M., &amp; Lotte, F. (2016). Framework for Electroencephalography-based Evaluation of User Experience. <i>Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems</i>, 2283–2294. https://doi.org/10.1145/2858036.2858525</span></li>
+<li><span id="burns2015use">Burns, C. G., &amp; Fairclough, S. H. (2015). Use of auditory event-related potentials to measure immersion during a computer game. <i>International Journal of Human-Computer Studies</i>, <i>73</i>, 107–114. https://doi.org/10.1016/j.ijhcs.2014.09.002</span></li>
+<li><span id="Bilalpur:2018:EEC:3242969.3243016">Bilalpur, M., Kankanhalli, M., Winkler, S., &amp; Subramanian, R. (2018). EEG-based Evaluation of Cognitive Workload Induced by Acoustic Parameters for Data Sonification. <i>Proceedings of the 20th ACM International Conference on Multimodal Interaction</i>, 315–323. https://doi.org/10.1145/3242969.3243016</span></li>
+<li><span id="Lampe:2014:BIH:2557500.2557533">Lampe, T., Fiederer, L. D. J., Voelker, M., Knorr, A., Riedmiller, M., &amp; Ball, T. (2014). A Brain-computer Interface for High-level Remote Control of an Autonomous, Reinforcement-learning-based Robotic System for Reaching and Grasping. <i>Proceedings of the 19th International Conference on Intelligent User Interfaces</i>, 83–88. https://doi.org/10.1145/2557500.2557533</span></li>
+<li><span id="Rodrigue:2015:SDD:2678025.2701382">Rodrigue, M., Son, J., Giesbrecht, B., Turk, M., &amp; Höllerer, T. (2015). Spatio-Temporal Detection of Divided Attention in Reading Applications Using EEG and Eye Tracking. <i>Proceedings of the 20th International Conference on Intelligent User Interfaces</i>, 121–125. https://doi.org/10.1145/2678025.2701382</span></li>
+<li><span id="Jarvis:2011:MPI:2070481.2070516">Jarvis, J., Putze, F., Heger, D., &amp; Schultz, T. (2011). Multimodal Person Independent Recognition of Workload Related Biosignal Patterns. <i>Proceedings of the 13th International Conference on Multimodal Interfaces</i>, 205–208. https://doi.org/10.1145/2070481.2070516</span></li>
+<li><span id="Afergan:2014:DDU:2611222.2557230">Afergan, D., Peck, E. M., Solovey, E. T., Jenkins, A., Hincks, S. W., Brown, E. T., Chang, R., &amp; Jacob, R. J. K. (2014). Dynamic Difficulty Using Brain Metrics of Workload. <i>Proceedings of the 32Nd Annual ACM Conference on Human Factors in Computing Systems</i>, 3797–3806. https://doi.org/10.1145/2556288.2557230</span></li>
+<li><span id="Putze:2015:DES:2702123.2702184">Putze, F., Amma, C., &amp; Schultz, T. (2015). Design and Evaluation of a Self-Correcting Gesture Interface Based on Error Potentials from EEG. <i>Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems</i>, 3375–3384. https://doi.org/10.1145/2702123.2702184</span></li></ol>
+
+<h2 id="contribute">Contribute</h2>
+<p>To contribute to the Model Overview, please consider to do a pull request to our <a href="https://github.com/brain-signals-hci/experiment-model/">Experiment Model for Brain Signals in HCI GitHub</a>. You can suggest changes to existing attributes, descriptions, or examples. Or you can add new attributes to expand the experiment model. If you do so, please provide a name, description, and example from the literature (including references). For editing, provide your changes to the <a href="https://github.com/brain-signals-hci/experiment-model/blob/main/brainsignal_hci_model.xlsx">Experiment Model File</a>, add references to the <a href="https://github.com/brain-signals-hci/experiment-model/blob/main/_bibliography/references.bib">bibtex file</a>, and open a pull request with your changes.
+Every pull request will be open for discussions.</p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">Experiment Model for Brain Signals in HCI maintained by <a href="https://github.com/brain-signals-hci">brain-signals-hci</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
