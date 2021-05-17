@@ -2,7 +2,7 @@ title: Experiment Model for Brain Signals in HCI
 
 baseurl: "/experiment-model/" # the subpath of your site, e.g. /blog
 url: "https://brain-signals-hci.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-
+repository:
 
 markdown: kramdown
 theme: jekyll-theme-slate
