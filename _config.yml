@@ -3,7 +3,7 @@ description:
 
 baseurl: "/experiment-model/" # the subpath of your site, e.g. /blog
 url: "https://brain-signals-hci.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-repository: experiment-model
+repository: brain-signals-hci/experiment-model
 
 markdown: kramdown
 theme: jekyll-theme-slate
